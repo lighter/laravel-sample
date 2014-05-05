@@ -2,13 +2,12 @@
 <html>
   <head>
     <title>Look at me Login</title>
-	{{ HTML::script('public/js/jquery-1.11.0.min.js') }}
-	{{ HTML::style('public/bootstrap-3.1.1-dist/css/bootstrap.min.css') }}
-        {{ HTML::style('public/bootstrap-3.1.1-dist/css/bootstrap-theme.min.css') }}
-
+    {{ HTML::script('public/js/jquery-1.11.0.min.js') }}
+    {{ HTML::style('public/bootstrap-3.1.1-dist/css/bootstrap.min.css') }}
+    {{ HTML::style('public/bootstrap-3.1.1-dist/css/bootstrap-theme.min.css') }}
   </head>
   <body>
-    
+
     <div class="row">
     <div class="col-md-2 col-md-offset-5">
     {{ Form::open(array('url' => 'login', 'class' => 'clearfix', 'role' => 'form' )) }}
