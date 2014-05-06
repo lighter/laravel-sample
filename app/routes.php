@@ -13,7 +13,8 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+  //return View::make('hello');
+  return View::make('home');
 });
 
 // route to show the login form
@@ -25,3 +26,7 @@ Route::post('login', array('uses' => 'HomeController@doLogin'));
 Route::get('logout', array('uses' => 'HomeController@doLogout'));
 
 Route::resource('show', 'ShowController');
+
+Route::get('example', function(){
+  return View::make('example');
+});
