@@ -30,3 +30,5 @@ Route::resource('show', 'ShowController');
 Route::get('example', function(){
   return View::make('example');
 });
+
+Route::resource('account', 'AccountController');

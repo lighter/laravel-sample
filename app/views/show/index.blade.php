@@ -5,4 +5,5 @@
   Login_status:
   {{ $login_status }}
 </p>
+<a class="btn btn-primary" href="{{ URL::to('account') }}">Account</a>
 @stop
