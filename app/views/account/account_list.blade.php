@@ -1,6 +1,9 @@
 @extends('layouts.base')
 
 @section('content')
+  @if (Session::has('message'))
+    <div class="alert alert-info">{{Session::get('message')}}</div>
+  @endif
   <h1>Account List</h1>
   <div class="row">
     <div class="col-md-6 col-md-offset-3" style="text-align: left;">
@@ -21,8 +24,11 @@
             <td>{{ $value->email }}</td>
             <td>
               <a href="{{ URL::to('account/' . $value->id) }}" class="btn btn-success">Show</a>
-              <a href="" class="btn btn-info">Edit</a>
-              <a href="" class="btn btn-danger">Delete</a>
+              <a href="{{ URL::to('account/' . $value->id . '/edit') }}" class="btn btn-info">Edit</a>
+              {{ Form::open(array('url' => 'account/' . $value->id, 'class' => 'pull-right')) }}
+                {{ Form::hidden('_method', 'DELETE') }}
+                {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
+              {{ Form::close() }}
             </td>
           </tr>
         @endforeach
