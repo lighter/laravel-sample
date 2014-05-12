@@ -19,7 +19,11 @@
           <tr>
             <td>{{ $key + 1 }}</td>
             <td>{{ $value->email }}</td>
-            <td>none</td>
+            <td>
+              <a href="{{ URL::to('account/' . $value->id) }}" class="btn btn-success">Show</a>
+              <a href="" class="btn btn-info">Edit</a>
+              <a href="" class="btn btn-danger">Delete</a>
+            </td>
           </tr>
         @endforeach
         </tbody>

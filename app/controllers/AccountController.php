@@ -78,7 +78,10 @@ class AccountController extends \BaseController {
    */
   public function show($id)
   {
-    //
+    $account = User::find($id);
+    $view = View::make('account.show')
+      ->with('account', $account);
+    return $view;
   }
 
 
